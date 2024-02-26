@@ -13,3 +13,4 @@ export default StyleSheet.create({
         color: '#f5f5f5',
     },
 })
+

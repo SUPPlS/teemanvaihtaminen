@@ -1,13 +1,15 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import Styles from './Styles'
+import { View } from 'react-native';
+import Styles from './../Styles';
+import ThemeSwitchButton from './../components/ThemeSwitchButton'
+import { useTheme } from '../context/UseTheme';
 
-const Settings = () => {
-  return (
-    <View>
-      <Text>This is the Settings screen</Text>
-    </View>
-  );
+export default function Settings() {
+    const { isDarkMode } = useTheme();
+
+    return (
+        <View style={[Styles.container, isDarkMode ? Styles.dark : Styles.light]}>
+            <ThemeSwitchButton />
+        </View>
+    )
 }
-
-export default Settings;
